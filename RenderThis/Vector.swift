@@ -9,4 +9,4 @@
 import Foundation
 import GLKit
 
-typealias Vector = double3
+typealias Vector = float3

@@ -13,8 +13,8 @@ func render() -> [[Color]] {
     let width: Int = 512
     let height: Int = 512
     
-    let half_width: Double = Double(width / 2) + 0.5
-    let half_height: Double = Double(height / 2) + 0.5
+    let half_width: Float = Float(width / 2) + 0.5
+    let half_height: Float = Float(height / 2) + 0.5
     
     let sphere1: Sphere = Sphere(center: Point(-1.5, 0.5, 1), radius: 1.2)
     let sphere2: Sphere = Sphere(center: Point(0, 0, 1.1), radius: 1.7)
@@ -24,8 +24,8 @@ func render() -> [[Color]] {
     
     for i in 0..<width {
         for j in 0..<height {
-            let x: Double = 2.0 * (Double(i) - half_width) / Double(width)
-            let y: Double = 2.0 * (Double(j) - half_height) / Double(height)
+            let x: Float = 2.0 * (Float(i) - half_width) / Float(width)
+            let y: Float = 2.0 * (Float(j) - half_height) / Float(height)
             
             let ray: Ray = Ray(origin: Point(0, 0, -2), direction: Vector(x, y, 1))
             

@@ -17,10 +17,10 @@ struct Ray {
     init(origin: Point, direction: Vector) {
         self.origin = origin
         self.direction = normalize(direction)
-        self.inv_direction = double3(1) / self.direction
+        self.inv_direction = float3(1) / self.direction
     }
 }
 
-func getPointOn(ray: Ray, at t: Double) -> Point {
+func getPointOn(ray: Ray, at t: Float) -> Point {
     return ray.origin + ray.direction * t
 }

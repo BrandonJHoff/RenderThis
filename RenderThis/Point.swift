@@ -9,4 +9,4 @@
 import Foundation
 import GLKit
 
-typealias Point = double3
+typealias Point = float3

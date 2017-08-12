@@ -11,7 +11,7 @@ import GLKit
 
 struct Sphere {
     let center: Point
-    let radius: Double
+    let radius: Float
 }
 
 // formula from:
