@@ -14,21 +14,20 @@ struct Sphere {
     let radius: Double
 }
 
+// formula from:
+// https://en.wikipedia.org/wiki/Line–sphere_intersection
 func hit(ray: Ray, with sphere: Sphere) -> Bool {
-    let temp = ray.origin - sphere.center
-    
-    let a = dot(ray.direction, ray.direction)
-    let b = 2.0 * dot(ray.direction, temp)
-    let c = dot(temp, temp) - sphere.radius * sphere.radius
-    
-    let discriminant = (b * b) - (4.0 * a * c)
+    let v = ray.origin - sphere.center
+    let b = dot(ray.direction, v)
+    let c = dot(v, v) - sphere.radius * sphere.radius
+    let discriminant = (b * b) - c
     
     if discriminant > 0 {
         let d = sqrt(discriminant)
-        var t = (-1.0 * b - d) / (2.0 * a)
+        var t = -b - d
         
         if t < 0.0001 {
-            t = (-1.0 * b + d) / (2.0 * a)
+            t = -b + d
         }
         
         if (t < 0.0001) || t > 10000.0 {
