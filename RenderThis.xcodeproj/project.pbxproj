@@ -11,6 +11,12 @@
 		0BF7CA821F3E9E3500D28067 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA811F3E9E3500D28067 /* ViewController.swift */; };
 		0BF7CA841F3E9E3500D28067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF7CA831F3E9E3500D28067 /* Assets.xcassets */; };
 		0BF7CA871F3E9E3500D28067 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF7CA851F3E9E3500D28067 /* Main.storyboard */; };
+		0BF7CA901F3EA58D00D28067 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA8F1F3EA58D00D28067 /* Ray.swift */; };
+		0BF7CA921F3EA5ED00D28067 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA911F3EA5ED00D28067 /* Point.swift */; };
+		0BF7CA941F3EA84800D28067 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA931F3EA84800D28067 /* Vector.swift */; };
+		0BF7CA961F3EB8E800D28067 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA951F3EB8E800D28067 /* Sphere.swift */; };
+		0BF7CA981F3EC02600D28067 /* Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA971F3EC02600D28067 /* Render.swift */; };
+		0BF7CA9A1F3EC17D00D28067 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA991F3EC17D00D28067 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		0BF7CA831F3E9E3500D28067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BF7CA861F3E9E3500D28067 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BF7CA881F3E9E3500D28067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BF7CA8F1F3EA58D00D28067 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
+		0BF7CA911F3EA5ED00D28067 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		0BF7CA931F3EA84800D28067 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+		0BF7CA951F3EB8E800D28067 /* Sphere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
+		0BF7CA971F3EC02600D28067 /* Render.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Render.swift; sourceTree = "<group>"; };
+		0BF7CA991F3EC17D00D28067 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +64,7 @@
 		0BF7CA7E1F3E9E3500D28067 /* RenderThis */ = {
 			isa = PBXGroup;
 			children = (
+				0BF7CA8E1F3EA22400D28067 /* Swift */,
 				0BF7CA7F1F3E9E3500D28067 /* AppDelegate.swift */,
 				0BF7CA811F3E9E3500D28067 /* ViewController.swift */,
 				0BF7CA831F3E9E3500D28067 /* Assets.xcassets */,
@@ -59,6 +72,19 @@
 				0BF7CA881F3E9E3500D28067 /* Info.plist */,
 			);
 			path = RenderThis;
+			sourceTree = "<group>";
+		};
+		0BF7CA8E1F3EA22400D28067 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				0BF7CA8F1F3EA58D00D28067 /* Ray.swift */,
+				0BF7CA911F3EA5ED00D28067 /* Point.swift */,
+				0BF7CA931F3EA84800D28067 /* Vector.swift */,
+				0BF7CA951F3EB8E800D28067 /* Sphere.swift */,
+				0BF7CA971F3EC02600D28067 /* Render.swift */,
+				0BF7CA991F3EC17D00D28067 /* Color.swift */,
+			);
+			name = Swift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,8 +158,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF7CA981F3EC02600D28067 /* Render.swift in Sources */,
+				0BF7CA921F3EA5ED00D28067 /* Point.swift in Sources */,
 				0BF7CA821F3E9E3500D28067 /* ViewController.swift in Sources */,
+				0BF7CA961F3EB8E800D28067 /* Sphere.swift in Sources */,
+				0BF7CA941F3EA84800D28067 /* Vector.swift in Sources */,
+				0BF7CA9A1F3EC17D00D28067 /* Color.swift in Sources */,
 				0BF7CA801F3E9E3500D28067 /* AppDelegate.swift in Sources */,
+				0BF7CA901F3EA58D00D28067 /* Ray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
