@@ -20,8 +20,8 @@ class Plane: Object {
         self.color = color
     }
     
-    func hit(withRay ray: Ray) -> Bool {
+    func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {
         let t: Float = dot(normal, ray.origin - origin) / dot(normal, ray.direction)
-        return t > 0.001
+        return hit_record.update(t: t, object: self)
     }
 }

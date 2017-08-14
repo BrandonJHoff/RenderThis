@@ -24,11 +24,14 @@ func capture(scene: Scene, withCamera camera: Camera) {
             let y: Float = 2.0 * (Float(j) - half_height) / Float(camera.film.height)
             
             let ray: Ray = camera.makeRay(x: x, y: y)
+            scene.hit_record.reset()
             
             for object in scene.objects {
-                if object.hit(withRay: ray) {
-                    camera.film.setPixel(color: object.color, atX: i, y: j)
-                }
+                object.hit(withRay: ray, recordWith: scene.hit_record)
+            }
+            
+            if let object = scene.hit_record.object {
+                camera.film.setPixel(color: object.color, atX: i, y: j)
             }
         }
     }

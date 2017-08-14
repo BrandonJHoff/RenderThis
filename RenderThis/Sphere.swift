@@ -22,7 +22,7 @@ class Sphere: Object {
     
     // formula from:
     // https://en.wikipedia.org/wiki/Line–sphere_intersection
-    func hit(withRay ray: Ray) -> Bool {
+    func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {
         let v = ray.origin - center
         let b = dot(ray.direction, v)
         let c = dot(v, v) - radius * radius
@@ -30,17 +30,10 @@ class Sphere: Object {
         
         if discriminant > 0 {
             let d = sqrt(discriminant)
-            var t = -b - d
+            let has_hit_t1 = hit_record.update(t: -b - d, object: self)
+            let has_hit_t2 = hit_record.update(t: -b + d, object: self)
             
-            if t < 0.0001 {
-                t = -b + d
-            }
-            
-            if (t < 0.0001) || t > 10000.0 {
-                return false
-            }
-            
-            return true
+            return has_hit_t1 || has_hit_t2
         }
         return false
     }

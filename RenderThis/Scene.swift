@@ -10,6 +10,11 @@ import Foundation
 
 class Scene {
     var objects: [Object] = []
+    var hit_record: HitRecord
+    
+    init() {
+        hit_record = HitRecord()
+    }
     
     func add(object: Object) {
         objects.append(object)
