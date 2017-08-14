@@ -24,4 +24,8 @@ class Plane: Object {
         let t: Float = dot(normal, ray.origin - origin) / dot(normal, ray.direction)
         return hit_record.update(t: t, object: self)
     }
+    
+    func normal(atPoint point: Point) -> Normal {
+        return normal
+    }
 }

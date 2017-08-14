@@ -37,6 +37,10 @@ class Sphere: Object {
         }
         return false
     }
+    
+    func normal(atPoint point: Point) -> Normal {
+        return normalize(point - center)
+    }
 }
 
 

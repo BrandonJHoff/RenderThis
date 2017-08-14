@@ -16,6 +16,7 @@
 		0BA22CD61F4263B5007149CF /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CD51F4263B5007149CF /* Light.swift */; };
 		0BA22CD81F426820007149CF /* PointLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CD71F426820007149CF /* PointLight.swift */; };
 		0BA22CDA1F426A5D007149CF /* DirectLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CD91F426A5D007149CF /* DirectLight.swift */; };
+		0BA22CDC1F426BB4007149CF /* LambertianMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CDB1F426BB4007149CF /* LambertianMaterial.swift */; };
 		0BF7CA801F3E9E3500D28067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA7F1F3E9E3500D28067 /* AppDelegate.swift */; };
 		0BF7CA821F3E9E3500D28067 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA811F3E9E3500D28067 /* ViewController.swift */; };
 		0BF7CA841F3E9E3500D28067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF7CA831F3E9E3500D28067 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		0BA22CD51F4263B5007149CF /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		0BA22CD71F426820007149CF /* PointLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLight.swift; sourceTree = "<group>"; };
 		0BA22CD91F426A5D007149CF /* DirectLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectLight.swift; sourceTree = "<group>"; };
+		0BA22CDB1F426BB4007149CF /* LambertianMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LambertianMaterial.swift; sourceTree = "<group>"; };
 		0BF7CA7C1F3E9E3500D28067 /* RenderThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenderThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF7CA7F1F3E9E3500D28067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BF7CA811F3E9E3500D28067 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				0BA22CD01F425CE5007149CF /* Material.swift */,
+				0BA22CDB1F426BB4007149CF /* LambertianMaterial.swift */,
 			);
 			name = Materials;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				0BF7CA801F3E9E3500D28067 /* AppDelegate.swift in Sources */,
 				0BA22CCE1F42128B007149CF /* Film.swift in Sources */,
 				0BA22CC91F420D0D007149CF /* Object.swift in Sources */,
+				0BA22CDC1F426BB4007149CF /* LambertianMaterial.swift in Sources */,
 				0BF7CA901F3EA58D00D28067 /* Ray.swift in Sources */,
 				0BA22CCB1F421081007149CF /* Camera.swift in Sources */,
 				0BF7CAA21F3FC4BB00D28067 /* Plane.swift in Sources */,
