@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-func render() -> [[Color]] {
+func render() -> Film {
     let width: Int = 512
     let height: Int = 512
     
@@ -22,7 +22,7 @@ func render() -> [[Color]] {
     let plane: Plane = Plane(origin: Point(0, -2, 0), normal: Normal(0, 1, 0))
     let camera: OrthoCamera = OrthoCamera(position: Point(0, 0, -2), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), xSize: 5.0, ySize: 5.0)
     
-    var pixels: [[Color]] = Array(repeating: Array(repeating: Color(0), count: height), count: width)
+    let film: Film = Film(width: width, height: height)
     
     for i in 0..<width {
         for j in 0..<height {
@@ -32,31 +32,19 @@ func render() -> [[Color]] {
             let ray: Ray = camera.makeRay(x: x, y: y)
             
             if sphere1.hit(withRay: ray) {
-                pixels[i][j] = Color(1, 0, 0)
+                film.setPixel(color: Color(1,0,0), atX: i, y: j)
             } else if sphere2.hit(withRay: ray) {
-                pixels[i][j] = Color(0, 1, 0)
+                film.setPixel(color: Color(0,1,0), atX: i, y: j)
             } else if sphere3.hit(withRay: ray) {
-                pixels[i][j] = Color(0, 0, 1)
+                film.setPixel(color: Color(0,0,1), atX: i, y: j)
             } else if plane.hit(withRay: ray) {
-                pixels[i][j] = Color(1, 0, 1)
+                film.setPixel(color: Color(1,0,1), atX: i, y: j)
             } else {
-                pixels[i][j] = Color(1, 1, 1)
+                film.setPixel(color: Color(1,1,1), atX: i, y: j)
             }
         }
     }
     
-    return pixels
+    return film
 }
 
-func convert(pixels: [[Color]]) -> NSImage {
-    let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: 512, pixelsHigh: 512, bitsPerSample: 8, samplesPerPixel: 3, hasAlpha: false, isPlanar: false, colorSpaceName: NSDeviceRGBColorSpace, bytesPerRow: 0, bitsPerPixel: 0)
-    
-    for i in 0..<pixels.count {
-        for j in 0..<pixels[0].count {
-            let y = pixels[0].count - 1 - j
-            bitmap?.setColor(NSColor.init(deviceRed: CGFloat(pixels[i][j].x), green: CGFloat(pixels[i][j].y), blue: CGFloat(pixels[i][j].z), alpha: 0.0), atX: i, y: y)
-        }
-    }
-    
-    return NSImage(cgImage: (bitmap?.cgImage)!, size: NSZeroSize)
-}

@@ -10,6 +10,7 @@
 		0BA22CC71F41521F007149CF /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CC61F41521F007149CF /* Scene.swift */; };
 		0BA22CC91F420D0D007149CF /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CC81F420D0D007149CF /* Object.swift */; };
 		0BA22CCB1F421081007149CF /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CCA1F421081007149CF /* Camera.swift */; };
+		0BA22CCE1F42128B007149CF /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CCD1F42128B007149CF /* Film.swift */; };
 		0BF7CA801F3E9E3500D28067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA7F1F3E9E3500D28067 /* AppDelegate.swift */; };
 		0BF7CA821F3E9E3500D28067 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA811F3E9E3500D28067 /* ViewController.swift */; };
 		0BF7CA841F3E9E3500D28067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF7CA831F3E9E3500D28067 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		0BA22CC61F41521F007149CF /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		0BA22CC81F420D0D007149CF /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		0BA22CCA1F421081007149CF /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		0BA22CCD1F42128B007149CF /* Film.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		0BF7CA7C1F3E9E3500D28067 /* RenderThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenderThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF7CA7F1F3E9E3500D28067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BF7CA811F3E9E3500D28067 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				0BF7CA8F1F3EA58D00D28067 /* Ray.swift */,
 				0BF7CA971F3EC02600D28067 /* Render.swift */,
 				0BA22CC61F41521F007149CF /* Scene.swift */,
+				0BA22CCD1F42128B007149CF /* Film.swift */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				0BF7CA9C1F3FC2A700D28067 /* Normal.swift in Sources */,
 				0BA22CC71F41521F007149CF /* Scene.swift in Sources */,
 				0BF7CA801F3E9E3500D28067 /* AppDelegate.swift in Sources */,
+				0BA22CCE1F42128B007149CF /* Film.swift in Sources */,
 				0BA22CC91F420D0D007149CF /* Object.swift in Sources */,
 				0BF7CA901F3EA58D00D28067 /* Ray.swift in Sources */,
 				0BA22CCB1F421081007149CF /* Camera.swift in Sources */,

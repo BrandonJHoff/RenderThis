@@ -14,8 +14,8 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let pixels = render()
-        imageView.image = convert(pixels: pixels)
+        let film = render()
+        imageView.image = film.develop()
     }
 
     override var representedObject: Any? {
