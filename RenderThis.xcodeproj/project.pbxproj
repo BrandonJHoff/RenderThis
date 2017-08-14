@@ -13,6 +13,9 @@
 		0BA22CCE1F42128B007149CF /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CCD1F42128B007149CF /* Film.swift */; };
 		0BA22CD11F425CE5007149CF /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CD01F425CE5007149CF /* Material.swift */; };
 		0BA22CD31F425DB6007149CF /* HitRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CD21F425DB6007149CF /* HitRecord.swift */; };
+		0BA22CD61F4263B5007149CF /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CD51F4263B5007149CF /* Light.swift */; };
+		0BA22CD81F426820007149CF /* PointLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CD71F426820007149CF /* PointLight.swift */; };
+		0BA22CDA1F426A5D007149CF /* DirectLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CD91F426A5D007149CF /* DirectLight.swift */; };
 		0BF7CA801F3E9E3500D28067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA7F1F3E9E3500D28067 /* AppDelegate.swift */; };
 		0BF7CA821F3E9E3500D28067 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA811F3E9E3500D28067 /* ViewController.swift */; };
 		0BF7CA841F3E9E3500D28067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF7CA831F3E9E3500D28067 /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 		0BA22CCD1F42128B007149CF /* Film.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		0BA22CD01F425CE5007149CF /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
 		0BA22CD21F425DB6007149CF /* HitRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitRecord.swift; sourceTree = "<group>"; };
+		0BA22CD51F4263B5007149CF /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		0BA22CD71F426820007149CF /* PointLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLight.swift; sourceTree = "<group>"; };
+		0BA22CD91F426A5D007149CF /* DirectLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectLight.swift; sourceTree = "<group>"; };
 		0BF7CA7C1F3E9E3500D28067 /* RenderThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenderThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF7CA7F1F3E9E3500D28067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BF7CA811F3E9E3500D28067 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +88,16 @@
 			name = Materials;
 			sourceTree = "<group>";
 		};
+		0BA22CD41F4263A5007149CF /* Lights */ = {
+			isa = PBXGroup;
+			children = (
+				0BA22CD51F4263B5007149CF /* Light.swift */,
+				0BA22CD71F426820007149CF /* PointLight.swift */,
+				0BA22CD91F426A5D007149CF /* DirectLight.swift */,
+			);
+			name = Lights;
+			sourceTree = "<group>";
+		};
 		0BF7CA731F3E9E3500D28067 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +130,7 @@
 		0BF7CA8E1F3EA22400D28067 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
+				0BA22CD41F4263A5007149CF /* Lights */,
 				0BA22CCF1F425CB9007149CF /* Materials */,
 				0BA22CCC1F421145007149CF /* Util */,
 				0BF7CAA01F3FC49A00D28067 /* Objects */,
@@ -217,12 +234,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BA22CD61F4263B5007149CF /* Light.swift in Sources */,
 				0BF7CA981F3EC02600D28067 /* Render.swift in Sources */,
 				0BF7CA921F3EA5ED00D28067 /* Point.swift in Sources */,
 				0BF7CA821F3E9E3500D28067 /* ViewController.swift in Sources */,
 				0BF7CA961F3EB8E800D28067 /* Sphere.swift in Sources */,
 				0BF7CA941F3EA84800D28067 /* Vector.swift in Sources */,
 				0BF7CA9F1F3FC2E800D28067 /* OrthoCamera.swift in Sources */,
+				0BA22CDA1F426A5D007149CF /* DirectLight.swift in Sources */,
 				0BF7CA9A1F3EC17D00D28067 /* Color.swift in Sources */,
 				0BF7CA9C1F3FC2A700D28067 /* Normal.swift in Sources */,
 				0BA22CD11F425CE5007149CF /* Material.swift in Sources */,
@@ -234,6 +253,7 @@
 				0BF7CA901F3EA58D00D28067 /* Ray.swift in Sources */,
 				0BA22CCB1F421081007149CF /* Camera.swift in Sources */,
 				0BF7CAA21F3FC4BB00D28067 /* Plane.swift in Sources */,
+				0BA22CD81F426820007149CF /* PointLight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
