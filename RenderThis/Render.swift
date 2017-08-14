@@ -19,6 +19,8 @@ func render() -> [[Color]] {
     let sphere1: Sphere = Sphere(center: Point(-1.5, 0.5, 1), radius: 1.2)
     let sphere2: Sphere = Sphere(center: Point(0, 0, 1.1), radius: 1.7)
     let sphere3: Sphere = Sphere(center: Point(1, -0.5, 1.2), radius: 1.9)
+    let plane: Plane = Plane(origin: Point(0, -2, 0), normal: Normal(0, 1, 0))
+    let camera: OrthoCamera = OrthoCamera(position: Point(0, 0, -2), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), xSize: 5.0, ySize: 5.0)
     
     var pixels: [[Color]] = Array(repeating: Array(repeating: Color(0), count: height), count: width)
     
@@ -27,16 +29,18 @@ func render() -> [[Color]] {
             let x: Float = 2.0 * (Float(i) - half_width) / Float(width)
             let y: Float = 2.0 * (Float(j) - half_height) / Float(height)
             
-            let ray: Ray = Ray(origin: Point(0, 0, -2), direction: Vector(x, y, 1))
+            let ray: Ray = makeRay(camera: camera, x: x, y: y)
             
             if hit(ray: ray, with: sphere1) {
-                pixels[i][j] = Color(0.2, 1, 1)
+                pixels[i][j] = Color(1, 0, 0)
             } else if hit(ray: ray, with: sphere2) {
-                pixels[i][j] = Color(1, 0.1, 1)
+                pixels[i][j] = Color(0, 1, 0)
             } else if hit(ray: ray, with: sphere3) {
-                pixels[i][j] = Color(1, 1, 0.2)
+                pixels[i][j] = Color(0, 0, 1)
+//            } else if hit(ray: ray, with: plane) > 0.001 {
+//                pixels[i][j] = Color(1, 0, 1)
             } else {
-                pixels[i][j] = Color(0.2, 0.2, 0.5)
+                pixels[i][j] = Color(1, 1, 1)
             }
         }
     }
@@ -49,7 +53,8 @@ func convert(pixels: [[Color]]) -> NSImage {
     
     for i in 0..<pixels.count {
         for j in 0..<pixels[0].count {
-            bitmap?.setColor(NSColor.init(deviceRed: CGFloat(pixels[i][j].x), green: CGFloat(pixels[i][j].y), blue: CGFloat(pixels[i][j].z), alpha: 0.0), atX: i, y: j)
+            let y = pixels[0].count - 1 - j
+            bitmap?.setColor(NSColor.init(deviceRed: CGFloat(pixels[i][j].x), green: CGFloat(pixels[i][j].y), blue: CGFloat(pixels[i][j].z), alpha: 0.0), atX: i, y: y)
         }
     }
     

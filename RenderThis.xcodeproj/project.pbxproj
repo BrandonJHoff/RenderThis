@@ -19,6 +19,7 @@
 		0BF7CA9A1F3EC17D00D28067 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA991F3EC17D00D28067 /* Color.swift */; };
 		0BF7CA9C1F3FC2A700D28067 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA9B1F3FC2A700D28067 /* Normal.swift */; };
 		0BF7CA9F1F3FC2E800D28067 /* OrthoCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA9E1F3FC2E800D28067 /* OrthoCamera.swift */; };
+		0BF7CAA21F3FC4BB00D28067 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CAA11F3FC4BB00D28067 /* Plane.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		0BF7CA991F3EC17D00D28067 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0BF7CA9B1F3FC2A700D28067 /* Normal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Normal.swift; sourceTree = "<group>"; };
 		0BF7CA9E1F3FC2E800D28067 /* OrthoCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrthoCamera.swift; sourceTree = "<group>"; };
+		0BF7CAA11F3FC4BB00D28067 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +83,11 @@
 		0BF7CA8E1F3EA22400D28067 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				0BF7CA9D1F3FC2D200D28067 /* Camera */,
+				0BF7CAA01F3FC49A00D28067 /* Objects */,
+				0BF7CA9D1F3FC2D200D28067 /* Cameras */,
 				0BF7CA8F1F3EA58D00D28067 /* Ray.swift */,
 				0BF7CA911F3EA5ED00D28067 /* Point.swift */,
 				0BF7CA931F3EA84800D28067 /* Vector.swift */,
-				0BF7CA951F3EB8E800D28067 /* Sphere.swift */,
 				0BF7CA971F3EC02600D28067 /* Render.swift */,
 				0BF7CA991F3EC17D00D28067 /* Color.swift */,
 				0BF7CA9B1F3FC2A700D28067 /* Normal.swift */,
@@ -93,12 +95,21 @@
 			name = Swift;
 			sourceTree = "<group>";
 		};
-		0BF7CA9D1F3FC2D200D28067 /* Camera */ = {
+		0BF7CA9D1F3FC2D200D28067 /* Cameras */ = {
 			isa = PBXGroup;
 			children = (
 				0BF7CA9E1F3FC2E800D28067 /* OrthoCamera.swift */,
 			);
-			name = Camera;
+			name = Cameras;
+			sourceTree = "<group>";
+		};
+		0BF7CAA01F3FC49A00D28067 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				0BF7CA951F3EB8E800D28067 /* Sphere.swift */,
+				0BF7CAA11F3FC4BB00D28067 /* Plane.swift */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				0BF7CA9C1F3FC2A700D28067 /* Normal.swift in Sources */,
 				0BF7CA801F3E9E3500D28067 /* AppDelegate.swift in Sources */,
 				0BF7CA901F3EA58D00D28067 /* Ray.swift in Sources */,
+				0BF7CAA21F3FC4BB00D28067 /* Plane.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
