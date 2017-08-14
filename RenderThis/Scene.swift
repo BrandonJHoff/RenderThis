@@ -8,7 +8,10 @@
 
 import Foundation
 
-//struct Scene {
-//    var camera
-//    
-//}
+class Scene {
+    var objects: [Object] = []
+    
+    func add(object: Object) {
+        objects.append(object)
+    }
+}

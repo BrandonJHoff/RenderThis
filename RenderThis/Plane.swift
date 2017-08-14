@@ -12,10 +12,12 @@ import GLKit
 class Plane: Object {
     let origin: Point
     let normal: Normal
+    var color: Color
     
-    init(origin: Point, normal: Normal) {
+    init(origin: Point, normal: Normal, color: Color) {
         self.origin = origin
         self.normal = normalize(normal)
+        self.color = color
     }
     
     func hit(withRay ray: Ray) -> Bool {

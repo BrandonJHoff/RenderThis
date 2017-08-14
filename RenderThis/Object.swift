@@ -9,5 +9,6 @@
 import Foundation
 
 protocol Object {
+    var color: Color { get set }
     func hit(withRay ray: Ray) -> Bool
 }

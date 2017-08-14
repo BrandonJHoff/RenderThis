@@ -9,5 +9,27 @@
 import Foundation
 
 protocol Camera {
+    var film: Film { get set }
     func makeRay(x: Float, y: Float) -> Ray
+}
+
+func capture(scene: Scene, withCamera camera: Camera) {
+    let half_width: Float = Float(camera.film.width / 2) + 0.5
+    let half_height: Float = Float(camera.film.height / 2) + 0.5
+    
+    
+    for i in 0..<camera.film.width {
+        for j in 0..<camera.film.height {
+            let x: Float = 2.0 * (Float(i) - half_width) / Float(camera.film.width)
+            let y: Float = 2.0 * (Float(j) - half_height) / Float(camera.film.height)
+            
+            let ray: Ray = camera.makeRay(x: x, y: y)
+            
+            for object in scene.objects {
+                if object.hit(withRay: ray) {
+                    camera.film.setPixel(color: object.color, atX: i, y: j)
+                }
+            }
+        }
+    }
 }

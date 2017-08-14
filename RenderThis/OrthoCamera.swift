@@ -14,9 +14,11 @@ class OrthoCamera: Camera {
     let u: Vector
     let v: Vector
     let w: Vector
+    var film: Film
     
-    init(position: Point, lookAt: Point, up: Vector, xSize: Float, ySize: Float) {
+    init(position: Point, lookAt: Point, up: Vector, xSize: Float, ySize: Float, film: Film) {
         self.position = position
+        self.film = film
         w = normalize(lookAt - position)
         u = normalize(cross(up, w)) * xSize
         v = normalize(cross(w, u)) * ySize
