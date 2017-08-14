@@ -9,32 +9,39 @@
 import Foundation
 import GLKit
 
-struct Sphere {
+class Sphere: Object {
     let center: Point
     let radius: Float
+    
+    init(center: Point, radius: Float) {
+        self.center = center
+        self.radius = radius
+    }
+    
+    // formula from:
+    // https://en.wikipedia.org/wiki/Line–sphere_intersection
+    func hit(withRay ray: Ray) -> Bool {
+        let v = ray.origin - center
+        let b = dot(ray.direction, v)
+        let c = dot(v, v) - radius * radius
+        let discriminant = (b * b) - c
+        
+        if discriminant > 0 {
+            let d = sqrt(discriminant)
+            var t = -b - d
+            
+            if t < 0.0001 {
+                t = -b + d
+            }
+            
+            if (t < 0.0001) || t > 10000.0 {
+                return false
+            }
+            
+            return true
+        }
+        return false
+    }
 }
 
-// formula from:
-// https://en.wikipedia.org/wiki/Line–sphere_intersection
-func hit(ray: Ray, with sphere: Sphere) -> Bool {
-    let v = ray.origin - sphere.center
-    let b = dot(ray.direction, v)
-    let c = dot(v, v) - sphere.radius * sphere.radius
-    let discriminant = (b * b) - c
-    
-    if discriminant > 0 {
-        let d = sqrt(discriminant)
-        var t = -b - d
-        
-        if t < 0.0001 {
-            t = -b + d
-        }
-        
-        if (t < 0.0001) || t > 10000.0 {
-            return false
-        }
-        
-        return true
-    }
-    return false
-}
+

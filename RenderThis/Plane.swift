@@ -9,7 +9,7 @@
 import Foundation
 import GLKit
 
-struct Plane {
+class Plane: Object {
     let origin: Point
     let normal: Normal
     
@@ -17,9 +17,9 @@ struct Plane {
         self.origin = origin
         self.normal = normalize(normal)
     }
-}
-
-func hit(ray: Ray, with plane: Plane) -> Float {
-    let t: Float = dot(plane.normal, ray.origin - plane.origin) / dot(plane.normal, ray.direction)
-    return t
+    
+    func hit(withRay ray: Ray) -> Bool {
+        let t: Float = dot(normal, ray.origin - origin) / dot(normal, ray.direction)
+        return t > 0.001
+    }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import GLKit
 
-struct OrthoCamera {
+class OrthoCamera: Camera {
     let position: Point
     let u: Vector
     let v: Vector
@@ -21,9 +21,9 @@ struct OrthoCamera {
         u = normalize(cross(up, w)) * xSize
         v = normalize(cross(w, u)) * ySize
     }
-}
-
-func makeRay(camera: OrthoCamera, x: Float, y: Float) -> Ray {
-    let p: Point = camera.position + x * camera.u + y * camera.v
-    return Ray(origin: p, direction: camera.w)
+    
+    func makeRay(x: Float, y: Float) -> Ray {
+        let p: Point = position + x * u + y * v
+        return Ray(origin: p, direction: w)
+    }
 }

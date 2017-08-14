@@ -9,7 +9,7 @@
 import Foundation
 import GLKit
 
-struct Ray {
+class Ray {
     let origin: Point
     let direction: Vector
     let inv_direction: Vector
@@ -19,8 +19,8 @@ struct Ray {
         self.direction = normalize(direction)
         self.inv_direction = float3(1) / self.direction
     }
-}
-
-func getPointOn(ray: Ray, at t: Float) -> Point {
-    return ray.origin + ray.direction * t
+    
+    func getPoint(at t: Float) -> Point {
+        return origin + direction * t
+    }
 }

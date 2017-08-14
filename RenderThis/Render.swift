@@ -29,16 +29,16 @@ func render() -> [[Color]] {
             let x: Float = 2.0 * (Float(i) - half_width) / Float(width)
             let y: Float = 2.0 * (Float(j) - half_height) / Float(height)
             
-            let ray: Ray = makeRay(camera: camera, x: x, y: y)
+            let ray: Ray = camera.makeRay(x: x, y: y)
             
-            if hit(ray: ray, with: sphere1) {
+            if sphere1.hit(withRay: ray) {
                 pixels[i][j] = Color(1, 0, 0)
-            } else if hit(ray: ray, with: sphere2) {
+            } else if sphere2.hit(withRay: ray) {
                 pixels[i][j] = Color(0, 1, 0)
-            } else if hit(ray: ray, with: sphere3) {
+            } else if sphere3.hit(withRay: ray) {
                 pixels[i][j] = Color(0, 0, 1)
-//            } else if hit(ray: ray, with: plane) > 0.001 {
-//                pixels[i][j] = Color(1, 0, 1)
+            } else if plane.hit(withRay: ray) {
+                pixels[i][j] = Color(1, 0, 1)
             } else {
                 pixels[i][j] = Color(1, 1, 1)
             }
