@@ -9,7 +9,7 @@
 import Foundation
 import GLKit
 
-class DirectLight {
+class DirectLight: Light {
     var color: Color
     let direction: Vector
     

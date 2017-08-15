@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Material {
-    func shade() -> Color
+    func shade(object: Object, atPoint point: Point, inScene scene: Scene, withIncomingRay ray: Ray) -> Color
 }

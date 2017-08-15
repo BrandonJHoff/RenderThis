@@ -9,7 +9,7 @@
 import Foundation
 import GLKit
 
-class PointLight {
+class PointLight: Light {
     var color: Color
     let position: Point
     
