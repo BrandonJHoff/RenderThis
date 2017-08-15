@@ -9,7 +9,7 @@
 import Foundation
 
 protocol Object {
-    var color: Color { get set }
+    var material: Material { get set }
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool
     func normal(atPoint point: Point) -> Normal
 }

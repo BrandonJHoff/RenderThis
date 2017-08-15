@@ -31,7 +31,7 @@ func capture(scene: Scene, withCamera camera: Camera) {
             }
             
             if let object = scene.hit_record.object {
-                camera.film.setPixel(color: object.color, atX: i, y: j)
+                camera.film.setPixel(color: object.material.shade(object: object, atPoint: ray.getPoint(at: scene.hit_record.t), inScene: scene, withIncomingRay: ray), atX: i, y: j)
             }
         }
     }

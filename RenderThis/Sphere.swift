@@ -12,12 +12,12 @@ import GLKit
 class Sphere: Object {
     let center: Point
     let radius: Float
-    var color: Color
+    var material: Material
     
-    init(center: Point, radius: Float, color: Color) {
+    init(center: Point, radius: Float, material: Material) {
         self.center = center
         self.radius = radius
-        self.color = color
+        self.material = material
     }
     
     // formula from:
