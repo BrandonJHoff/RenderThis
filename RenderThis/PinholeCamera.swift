@@ -33,7 +33,7 @@ class PinholeCamera: Camera {
     func makeRay(i: Int, j: Int) -> Ray {
         let x: Float = (Float(i) + 0.5) * x_scale - 1
         let y: Float = (Float(j) + 0.5) * y_scale - 1
-        let p: Point = position + x * u + y * v
-        return Ray(origin: p, direction: w)
+        let dir: Vector = normalize(w + x * u + y * v)
+        return Ray(origin: position, direction: dir)
     }
 }

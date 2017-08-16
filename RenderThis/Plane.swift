@@ -21,7 +21,7 @@ class Plane: Object {
     }
     
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {
-        let t: Float = dot(normal, ray.origin - origin) / dot(normal, ray.direction)
+        let t: Float = dot(-normal, ray.origin - origin) / dot(normal, ray.direction)
         return hit_record.update(t: t, object: self)
     }
     
