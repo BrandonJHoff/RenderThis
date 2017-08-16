@@ -10,14 +10,18 @@ import Foundation
 import Cocoa
 
 class Film {
-    let width: Int
-    let height: Int
+    let horizontal_resolution: Int
+    let vertical_resolution: Int
+    let width: Float
+    let height: Float
     var pixels: [[Color]]
     
-    init(width: Int, height: Int) {
+    init(horizontal_resolution: Int, vertical_resolution: Int, width: Float = 0, height: Float = 0) {
+        self.horizontal_resolution = horizontal_resolution
+        self.vertical_resolution = vertical_resolution
         self.width = width
         self.height = height
-        pixels = Array(repeating: Array(repeating: Color(0), count: height), count: width)
+        pixels = Array(repeating: Array(repeating: Color(0), count: vertical_resolution), count: horizontal_resolution)
     }
     
     func setPixel(color: Color, atX x: Int, y: Int) {
@@ -25,7 +29,7 @@ class Film {
     }
     
     func develop() -> NSImage {
-        let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: width, pixelsHigh: height, bitsPerSample: 8, samplesPerPixel: 3, hasAlpha: false, isPlanar: false, colorSpaceName: NSDeviceRGBColorSpace, bytesPerRow: 0, bitsPerPixel: 0)
+        let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: horizontal_resolution, pixelsHigh: vertical_resolution, bitsPerSample: 8, samplesPerPixel: 3, hasAlpha: false, isPlanar: false, colorSpaceName: NSDeviceRGBColorSpace, bytesPerRow: 0, bitsPerPixel: 0)
         
         for i in 0..<pixels.count {
             for j in 0..<pixels[0].count {

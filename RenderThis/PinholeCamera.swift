@@ -1,15 +1,15 @@
 //
-//  OrthoCamera.swift
+//  PinholeCamera.swift
 //  RenderThis
 //
-//  Created by Brandon Hoff on 8/12/17.
+//  Created by Brandon Hoff on 8/14/17.
 //  Copyright © 2017 Brandon Hoff. All rights reserved.
 //
 
 import Foundation
 import GLKit
 
-class OrthoCamera: Camera {
+class PinholeCamera: Camera {
     let position: Point
     let u: Vector
     let v: Vector
@@ -18,12 +18,14 @@ class OrthoCamera: Camera {
     let y_scale: Float
     var film: Film
     
-    init(position: Point, lookAt: Point, up: Vector, xSize: Float, ySize: Float, film: Film) {
+    init(position: Point, lookAt: Point, up: Vector, horizontal_field_of_view hfov: Float, focal_length: Float, film: Film) {
         self.position = position
         self.film = film
+        let image_width: Float = 2.0 * tan(hfov * 0.5) * focal_length
+        let image_height: Float = image_width / (Float(film.horizontal_resolution) / Float(film.vertical_resolution))
         w = normalize(lookAt - position)
-        u = normalize(cross(up, w)) * xSize
-        v = normalize(cross(w, u)) * ySize
+        u = normalize(cross(up, w)) * image_width
+        v = normalize(cross(w, u)) * image_height
         x_scale = 2.0 / Float(film.horizontal_resolution)
         y_scale = 2.0 / Float(film.vertical_resolution)
     }

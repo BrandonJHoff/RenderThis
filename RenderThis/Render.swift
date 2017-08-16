@@ -10,8 +10,8 @@ import Foundation
 import Cocoa
 
 func render() -> Film {
-    let width: Int = 512
-    let height: Int = 512
+    let horizontal_resolution: Int = 640
+    let vertical_resolution: Int = 480
     
     let scene: Scene = Scene()
     
@@ -22,8 +22,9 @@ func render() -> Film {
     //scene.add(light: PointLight(position: Point(-30, 20, -80), color: Color(1,1,1)))\
     scene.add(light: DirectLight(direction: Vector(0,0,1), color: Color(1,1,1)))
     
-    let film: Film = Film(width: width, height: height)
-    let camera: OrthoCamera = OrthoCamera(position: Point(0, 0, -2), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), xSize: 5.0, ySize: 5.0, film: film)
+    let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
+    let camera: PinholeCamera = PinholeCamera(position: Point(0,0,-2), lookAt: Point(0,0,0), up: Vector(0,1,0), horizontal_field_of_view: 15, focal_length: 1, film: film)
+    //let camera: OrthoCamera = OrthoCamera(position: Point(0, 0, -2), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), xSize: 5.0, ySize: 5.0, film: film)
     
     capture(scene: scene, withCamera: camera)
     

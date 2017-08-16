@@ -14,8 +14,8 @@ protocol Camera {
 }
 
 func capture(scene: Scene, withCamera camera: Camera) {
-    for i in 0..<camera.film.width {
-        for j in 0..<camera.film.height {            
+    for i in 0..<camera.film.horizontal_resolution {
+        for j in 0..<camera.film.vertical_resolution {
             let ray: Ray = camera.makeRay(i: i, j: j)
             scene.hit_record.reset()
             
