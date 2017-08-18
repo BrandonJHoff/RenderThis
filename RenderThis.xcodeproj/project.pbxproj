@@ -19,6 +19,7 @@
 		0BA22CDC1F426BB4007149CF /* LambertianMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CDB1F426BB4007149CF /* LambertianMaterial.swift */; };
 		0BA22CDE1F427D63007149CF /* PinholeCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CDD1F427D63007149CF /* PinholeCamera.swift */; };
 		0BA8C23E1F473955005C2AA6 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA8C23D1F473955005C2AA6 /* Box.swift */; };
+		0BA8C2401F474A2D005C2AA6 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA8C23F1F474A2D005C2AA6 /* Disk.swift */; };
 		0BF7CA801F3E9E3500D28067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA7F1F3E9E3500D28067 /* AppDelegate.swift */; };
 		0BF7CA821F3E9E3500D28067 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA811F3E9E3500D28067 /* ViewController.swift */; };
 		0BF7CA841F3E9E3500D28067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF7CA831F3E9E3500D28067 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		0BA22CDB1F426BB4007149CF /* LambertianMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LambertianMaterial.swift; sourceTree = "<group>"; };
 		0BA22CDD1F427D63007149CF /* PinholeCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinholeCamera.swift; sourceTree = "<group>"; };
 		0BA8C23D1F473955005C2AA6 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		0BA8C23F1F474A2D005C2AA6 /* Disk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
 		0BF7CA7C1F3E9E3500D28067 /* RenderThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenderThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF7CA7F1F3E9E3500D28067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BF7CA811F3E9E3500D28067 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				0BF7CAA11F3FC4BB00D28067 /* Plane.swift */,
 				0BA22CC81F420D0D007149CF /* Object.swift */,
 				0BA8C23D1F473955005C2AA6 /* Box.swift */,
+				0BA8C23F1F474A2D005C2AA6 /* Disk.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BA8C2401F474A2D005C2AA6 /* Disk.swift in Sources */,
 				0BA22CD61F4263B5007149CF /* Light.swift in Sources */,
 				0BF7CA981F3EC02600D28067 /* Render.swift in Sources */,
 				0BF7CA921F3EA5ED00D28067 /* Point.swift in Sources */,
