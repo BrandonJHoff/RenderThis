@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 
 func render() -> Film {
-    let scene: Scene = sDirectLight1()
+    let scene: Scene = sBox()
     capture(scene: scene, withCamera: scene.camera)
     return scene.camera.film
 }
@@ -70,6 +70,28 @@ func sDirectLight1() -> Scene {
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
     let camera: PinholeCamera = PinholeCamera(position: Point(0, 2.5, -10), lookAt: Point(0, 2, 0), up: Vector(0, 1, 0), horizontal_field_of_view: 20, focal_length: 0.5, film: film)
 
+    scene.add(camera: camera)
+    
+    return scene
+}
+
+func sBox() -> Scene {
+    let horizontal_resolution: Int = 640
+    let vertical_resolution: Int = 480
+    let scene: Scene = Scene()
+    
+    scene.add(object: Box(min: Point(-1, 0, -1), max: Point(1, 2, 1), material: LambertianMaterial(color: Color(1, 0.9, 0.1), kd: 0.3)))
+//    scene.add(object: Sphere(center: Point(-4, 3.5, 1.5), radius: 2, material: LambertianMaterial(color: Color(0.1, 0.3, 0.9), kd: 0.3)))
+//    scene.add(object: Sphere(center: Point(0, 1, 0.5), radius: 1, material: LambertianMaterial(color: Color(1, 0.9, 0.1), kd: 0.4)))
+//    scene.add(object: Sphere(center: Point(2, 1.5, -0.5), radius: 1.5, material: LambertianMaterial(color: Color(1, 0.2, 0.2), kd: 0.3)))
+    scene.add(object: Plane(origin: Point(0, 0, 0), normal: Normal(0, 1, 0), material: LambertianMaterial(color: Color(1, 0.3, 0.7), kd: 0.6)))
+    
+    scene.add(light: PointLight(position: Point(20, 80, -30), color: Color(1, 1, 1)))
+    scene.add(light: PointLight(position: Point(50, 40, -20), color: Color(1, 1, 1)))
+    
+    let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
+    let camera: PinholeCamera = PinholeCamera(position: Point(0, 2.5, -10), lookAt: Point(0, 2, 0), up: Vector(0, 1, 0), horizontal_field_of_view: 20, focal_length: 0.5, film: film)
+    
     scene.add(camera: camera)
     
     return scene

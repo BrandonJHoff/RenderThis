@@ -18,6 +18,7 @@
 		0BA22CDA1F426A5D007149CF /* DirectLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CD91F426A5D007149CF /* DirectLight.swift */; };
 		0BA22CDC1F426BB4007149CF /* LambertianMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CDB1F426BB4007149CF /* LambertianMaterial.swift */; };
 		0BA22CDE1F427D63007149CF /* PinholeCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CDD1F427D63007149CF /* PinholeCamera.swift */; };
+		0BA8C23E1F473955005C2AA6 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA8C23D1F473955005C2AA6 /* Box.swift */; };
 		0BF7CA801F3E9E3500D28067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA7F1F3E9E3500D28067 /* AppDelegate.swift */; };
 		0BF7CA821F3E9E3500D28067 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF7CA811F3E9E3500D28067 /* ViewController.swift */; };
 		0BF7CA841F3E9E3500D28067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF7CA831F3E9E3500D28067 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		0BA22CD91F426A5D007149CF /* DirectLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectLight.swift; sourceTree = "<group>"; };
 		0BA22CDB1F426BB4007149CF /* LambertianMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LambertianMaterial.swift; sourceTree = "<group>"; };
 		0BA22CDD1F427D63007149CF /* PinholeCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinholeCamera.swift; sourceTree = "<group>"; };
+		0BA8C23D1F473955005C2AA6 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		0BF7CA7C1F3E9E3500D28067 /* RenderThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenderThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF7CA7F1F3E9E3500D28067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BF7CA811F3E9E3500D28067 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				0BF7CA951F3EB8E800D28067 /* Sphere.swift */,
 				0BF7CAA11F3FC4BB00D28067 /* Plane.swift */,
 				0BA22CC81F420D0D007149CF /* Object.swift */,
+				0BA8C23D1F473955005C2AA6 /* Box.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				0BA22CD11F425CE5007149CF /* Material.swift in Sources */,
 				0BA22CC71F41521F007149CF /* Scene.swift in Sources */,
 				0BA22CD31F425DB6007149CF /* HitRecord.swift in Sources */,
+				0BA8C23E1F473955005C2AA6 /* Box.swift in Sources */,
 				0BF7CA801F3E9E3500D28067 /* AppDelegate.swift in Sources */,
 				0BA22CCE1F42128B007149CF /* Film.swift in Sources */,
 				0BA22CC91F420D0D007149CF /* Object.swift in Sources */,
