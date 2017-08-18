@@ -12,6 +12,7 @@ class Scene {
     var objects: [Object] = []
     var lights: [Light] = []
     var hit_record: HitRecord
+    var camera: Camera!
     
     init() {
         hit_record = HitRecord()
@@ -23,5 +24,9 @@ class Scene {
     
     func add(light: Light) {
         lights.append(light)
+    }
+    
+    func add(camera: Camera) {
+        self.camera = camera
     }
 }
