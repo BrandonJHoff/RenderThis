@@ -21,8 +21,12 @@ class Plane: Object {
     }
     
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {
-        let t: Float = dot(-normal, ray.origin - origin) / dot(normal, ray.direction)
-        return hit_record.update(t: t, object: self)
+        let denom: Float = dot(normal, ray.direction)
+        if abs(denom) > 0.0001 {
+            let t: Float = dot(normal, origin - ray.origin) / denom
+            return hit_record.update(t: t, object: self)
+        }
+        return false
     }
     
     func normal(atPoint point: Point) -> Normal {
