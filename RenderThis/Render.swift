@@ -86,6 +86,7 @@ func sBox() -> Scene {
     
     scene.add(object: Box(min: Point(-4.5, 0, -4.5), max: Point(4.5, 2, 4.5), material: LambertianMaterial(color: Color(0.8, 0.8, 0.8), kd: 0.6)))
     scene.add(object: Box(min: Point(-3.5, 2, -3.5), max: Point(0, 2.75, 0), material: LambertianMaterial(color: Color(1, 0.4, 1), kd: 0.6)))
+    scene.add(object: Triangle(p0: Point(1, 3, 1), p1: Point(3, 2, -0.5), p2: Point(3, 5, 1.5), material: LambertianMaterial(color: Color(1, 1, 0), kd: 0.6)))
     scene.add(object: Disk(center: Point(3, 2.5, -3.3), normal: Normal(-1, 1, -1), radius: 0.5, material: disk_material_1))
     scene.add(object: Disk(center: Point(2.5, 2.5, -3.3), normal: Normal(-1, 1, -1), radius: 0.5, material: disk_material_2))
     scene.add(object: Disk(center: Point(2, 2.5, -3.3), normal: Normal(-1, 1, -1), radius: 0.5, material: disk_material_1))
