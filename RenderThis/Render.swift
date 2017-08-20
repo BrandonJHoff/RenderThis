@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 
 func render() -> Film {
-    let scene: Scene = scene4()
+    let scene: Scene = scene5()
     capture(scene: scene, withCamera: scene.camera)
     return scene.camera.film
 }
@@ -102,6 +102,23 @@ func scene4() -> Scene {
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
     let camera: PinholeCamera = PinholeCamera(position: Point(-2.5, 10, -20), lookAt: Point(0, 3, 0), up: Vector(0, 1, 0), horizontal_field_of_view: 90, focal_length: 0.1, film: film, samples_per_pixel: 1)
+    
+    scene.add(camera: camera)
+    
+    return scene
+}
+
+
+func scene5() -> Scene {
+    let horizontal_resolution: Int = 640
+    let vertical_resolution: Int = 480
+    let scene: Scene = Scene()
+    
+    scene.add(object: Sphere(center: Point(0, 0, 1), radius: 0.5, material: LambertianMaterial(color: Color(0.8, 0.8, 0.8), kd: 0.6)))
+    scene.add(object: Sphere(center: Point(0, -100.5, 1), radius: 100, material: LambertianMaterial(color: Color(1, 0.5, 0.5), kd: 0.6)))
+    
+    let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
+    let camera: PinholeCamera = PinholeCamera(position: Point(0, 1, -4), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), horizontal_field_of_view: 90, focal_length: 0.1, film: film, samples_per_pixel: 32)
     
     scene.add(camera: camera)
     

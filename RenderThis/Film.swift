@@ -29,12 +29,12 @@ class Film {
     }
     
     func develop() -> NSImage {
-        let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: horizontal_resolution, pixelsHigh: vertical_resolution, bitsPerSample: 8, samplesPerPixel: 3, hasAlpha: false, isPlanar: false, colorSpaceName: NSDeviceRGBColorSpace, bytesPerRow: 0, bitsPerPixel: 0)
+        let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: horizontal_resolution, pixelsHigh: vertical_resolution, bitsPerSample: 8, samplesPerPixel: 3, hasAlpha: false, isPlanar: false, colorSpaceName: NSCalibratedRGBColorSpace, bytesPerRow: 0, bitsPerPixel: 0)
         
         for i in 0..<pixels.count {
             for j in 0..<pixels[0].count {
                 let y = pixels[0].count - 1 - j
-                bitmap?.setColor(NSColor.init(deviceRed: CGFloat(pixels[i][j].x), green: CGFloat(pixels[i][j].y), blue: CGFloat(pixels[i][j].z), alpha: 0.0), atX: i, y: y)
+                bitmap?.setColor(NSColor.init(calibratedRed: CGFloat(pixels[i][j].x), green: CGFloat(pixels[i][j].y), blue: CGFloat(pixels[i][j].z), alpha: 0.0), atX: i, y: y)
             }
         }
         

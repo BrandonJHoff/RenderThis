@@ -16,18 +16,12 @@ protocol Camera {
 }
 
 func capture(scene: Scene, withCamera camera: Camera) {
-    let inv_horizontal_resolution: Float = 1.0 / Float(camera.film.horizontal_resolution)
-    let inv_vertical_resolution: Float = 1.0 / Float(camera.film.vertical_resolution)
-    
     for i in 0..<camera.film.horizontal_resolution {
         for j in 0..<camera.film.vertical_resolution {
             
             var final_color: Color = Color(0, 0, 0)
             
             for _ in 0..<camera.samples_per_pixel {
-//                let u: Float = Float(i) + Float(drand48()) * inv_horizontal_resolution
-//                let v: Float = Float(j) + Float(drand48()) * inv_vertical_resolution
-                
                 let ray: Ray = camera.makeRay(i: i, j: j)
                 scene.hit_record.reset()
                 
@@ -37,6 +31,8 @@ func capture(scene: Scene, withCamera camera: Camera) {
                 
                 if let object = scene.hit_record.object {
                     final_color +=  object.material.shade(object: object, atPoint: ray.getPoint(at: scene.hit_record.t), inScene: scene, withIncomingRay: ray)
+                } else {
+                    final_color += Color(1)
                 }
             }
             
