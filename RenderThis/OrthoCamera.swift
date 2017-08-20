@@ -17,10 +17,12 @@ class OrthoCamera: Camera {
     let x_scale: Float
     let y_scale: Float
     var film: Film
+    var samples_per_pixel: Int
     
-    init(position: Point, lookAt: Point, up: Vector, xSize: Float, ySize: Float, film: Film) {
+    init(position: Point, lookAt: Point, up: Vector, xSize: Float, ySize: Float, film: Film, samples_per_pixel: Int) {
         self.position = position
         self.film = film
+        self.samples_per_pixel = samples_per_pixel
         w = normalize(lookAt - position)
         u = normalize(cross(up, w)) * xSize
         v = normalize(cross(w, u)) * ySize

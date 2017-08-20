@@ -683,14 +683,25 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="RenderThis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="698" height="557"/>
+                        <rect key="frame" x="0.0" y="0.0" width="816" height="715"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BF2-49-CaK">
-                                <rect key="frame" x="93" y="25" width="512" height="512"/>
+                                <rect key="frame" x="153" y="102" width="512" height="512"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="TlT-X3-RBG"/>
                             </imageView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQQ-Pg-ktz">
+                                <rect key="frame" x="367" y="667" width="84" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Render" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vm2-sQ-07y">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="renderPressed:" target="XfG-lQ-9wD" id="ZFD-gC-etM"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -699,7 +710,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="184" y="798.5"/>
+            <point key="canvasLocation" x="243" y="877.5"/>
         </scene>
     </scenes>
 </document>

@@ -14,8 +14,6 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let film = render()
-        imageView.image = film.develop()
     }
 
     override var representedObject: Any? {
@@ -24,6 +22,9 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBAction func renderPressed(_ sender: NSButton) {
+        let film = render()
+        imageView.image = film.develop()
+    }
 }
 

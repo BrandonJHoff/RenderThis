@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B61F8D51F47C4790013C10F /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61F8D41F47C4790013C10F /* Triangle.swift */; };
+		0B61F8D81F490D4D0013C10F /* RandomSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61F8D71F490D4D0013C10F /* RandomSample.swift */; };
+		0B61F8DA1F490D5C0013C10F /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61F8D91F490D5C0013C10F /* Sample.swift */; };
 		0BA22CC71F41521F007149CF /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CC61F41521F007149CF /* Scene.swift */; };
 		0BA22CC91F420D0D007149CF /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CC81F420D0D007149CF /* Object.swift */; };
 		0BA22CCB1F421081007149CF /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA22CCA1F421081007149CF /* Camera.swift */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		0B61F8D41F47C4790013C10F /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		0B61F8D71F490D4D0013C10F /* RandomSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSample.swift; sourceTree = "<group>"; };
+		0B61F8D91F490D5C0013C10F /* Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		0BA22CC61F41521F007149CF /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		0BA22CC81F420D0D007149CF /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		0BA22CCA1F421081007149CF /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
@@ -81,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B61F8D61F490D280013C10F /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				0B61F8D71F490D4D0013C10F /* RandomSample.swift */,
+				0B61F8D91F490D5C0013C10F /* Sample.swift */,
+			);
+			name = Samples;
+			sourceTree = "<group>";
+		};
 		0BA22CCC1F421145007149CF /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +156,7 @@
 		0BF7CA8E1F3EA22400D28067 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
+				0B61F8D61F490D280013C10F /* Samples */,
 				0BA22CD41F4263A5007149CF /* Lights */,
 				0BA22CCF1F425CB9007149CF /* Materials */,
 				0BA22CCC1F421145007149CF /* Util */,
@@ -257,6 +271,7 @@
 				0BA22CD61F4263B5007149CF /* Light.swift in Sources */,
 				0BF7CA981F3EC02600D28067 /* Render.swift in Sources */,
 				0BF7CA921F3EA5ED00D28067 /* Point.swift in Sources */,
+				0B61F8DA1F490D5C0013C10F /* Sample.swift in Sources */,
 				0BF7CA821F3E9E3500D28067 /* ViewController.swift in Sources */,
 				0BF7CA961F3EB8E800D28067 /* Sphere.swift in Sources */,
 				0BF7CA941F3EA84800D28067 /* Vector.swift in Sources */,
@@ -268,6 +283,7 @@
 				0BA22CC71F41521F007149CF /* Scene.swift in Sources */,
 				0BA22CD31F425DB6007149CF /* HitRecord.swift in Sources */,
 				0BA8C23E1F473955005C2AA6 /* Box.swift in Sources */,
+				0B61F8D81F490D4D0013C10F /* RandomSample.swift in Sources */,
 				0BF7CA801F3E9E3500D28067 /* AppDelegate.swift in Sources */,
 				0BA22CCE1F42128B007149CF /* Film.swift in Sources */,
 				0BA8C2421F479037005C2AA6 /* Ring.swift in Sources */,
