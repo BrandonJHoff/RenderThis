@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3A7DCE1F4BC8BC00224311 /* MetalMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A7DCD1F4BC8BC00224311 /* MetalMaterial.swift */; };
 		0B61F8D51F47C4790013C10F /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61F8D41F47C4790013C10F /* Triangle.swift */; };
 		0B61F8D81F490D4D0013C10F /* RandomSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61F8D71F490D4D0013C10F /* RandomSample.swift */; };
 		0B61F8DA1F490D5C0013C10F /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61F8D91F490D5C0013C10F /* Sample.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B3A7DCD1F4BC8BC00224311 /* MetalMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalMaterial.swift; sourceTree = "<group>"; };
 		0B61F8D41F47C4790013C10F /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		0B61F8D71F490D4D0013C10F /* RandomSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSample.swift; sourceTree = "<group>"; };
 		0B61F8D91F490D5C0013C10F /* Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				0BA22CD01F425CE5007149CF /* Material.swift */,
 				0BA22CDB1F426BB4007149CF /* LambertianMaterial.swift */,
+				0B3A7DCD1F4BC8BC00224311 /* MetalMaterial.swift */,
 			);
 			name = Materials;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			files = (
 				0BA8C2401F474A2D005C2AA6 /* Disk.swift in Sources */,
 				0B61F8D51F47C4790013C10F /* Triangle.swift in Sources */,
+				0B3A7DCE1F4BC8BC00224311 /* MetalMaterial.swift in Sources */,
 				0BA22CD61F4263B5007149CF /* Light.swift in Sources */,
 				0BF7CA981F3EC02600D28067 /* Render.swift in Sources */,
 				0BF7CA921F3EA5ED00D28067 /* Point.swift in Sources */,

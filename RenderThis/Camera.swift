@@ -30,8 +30,10 @@ func capture(scene: Scene, withCamera camera: Camera) {
                 }
                 
                 if let object = scene.hit_record.object {
-                    final_color +=  object.material.shade(object: object, atPoint: ray.getPoint(at: scene.hit_record.t), inScene: scene, withIncomingRay: ray)
+                    final_color +=  object.material.shade(object: object, atPoint: ray.getPoint(at: scene.hit_record.t), inScene: scene, withIncomingRay: ray, atMaxDepth: 0)
                 } else {
+                    //let t: Float = 0.5 * (ray.direction.y + 1.0)
+                    //final_color += (1.0 - t) * Color(1) + t * Color(0.5, 0.7, 1)
                     final_color += Color(1)
                 }
             }
