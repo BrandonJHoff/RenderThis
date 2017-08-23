@@ -31,24 +31,13 @@ class LambertianMaterial: Material {
             if let object = temp_hit_record.object {
                 final_color +=  object.material.shade(object: object, atPoint: secondary_ray.getPoint(at: temp_hit_record.t), inScene: scene, withIncomingRay: secondary_ray, atMaxDepth: depth + 1)
             } else {
-                final_color += Color(1)
+                let t: Float = 0.5 * (ray.direction.y + 1.0)
+                final_color += (1.0 - t) * Color(1) + t * Color(0.5, 0.7, 1)
             }
             
             final_color = final_color * cosphi
         }
         
         return final_color * color
-    }
-    
-    func uniformSampleHemishpere() -> Vector {
-        let r1: Float = Float(drand48())
-        let r2: Float = Float(drand48())
-        
-        let sinTheta: Float = sqrtf(1 - r1 * r1);
-        let phi: Float = Float(2.0) * Float.pi * r2;
-        let x: Float = sinTheta * cosf(phi);
-        let z: Float = sinTheta * sinf(phi);
-        
-        return Vector(x, r1, z);
     }
 }
