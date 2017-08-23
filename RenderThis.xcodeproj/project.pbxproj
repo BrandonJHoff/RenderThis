@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0D2DBD1F4D16D800C4EC57 /* DielectricMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D2DBC1F4D16D800C4EC57 /* DielectricMaterial.swift */; };
 		0B3A7DCE1F4BC8BC00224311 /* MetalMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A7DCD1F4BC8BC00224311 /* MetalMaterial.swift */; };
 		0B61F8D51F47C4790013C10F /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61F8D41F47C4790013C10F /* Triangle.swift */; };
 		0B61F8D81F490D4D0013C10F /* RandomSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61F8D71F490D4D0013C10F /* RandomSample.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B0D2DBC1F4D16D800C4EC57 /* DielectricMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DielectricMaterial.swift; sourceTree = "<group>"; };
 		0B3A7DCD1F4BC8BC00224311 /* MetalMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalMaterial.swift; sourceTree = "<group>"; };
 		0B61F8D41F47C4790013C10F /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		0B61F8D71F490D4D0013C10F /* RandomSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSample.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				0BA22CD01F425CE5007149CF /* Material.swift */,
 				0BA22CDB1F426BB4007149CF /* LambertianMaterial.swift */,
 				0B3A7DCD1F4BC8BC00224311 /* MetalMaterial.swift */,
+				0B0D2DBC1F4D16D800C4EC57 /* DielectricMaterial.swift */,
 			);
 			name = Materials;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				0BA22CDE1F427D63007149CF /* PinholeCamera.swift in Sources */,
 				0BA22CDC1F426BB4007149CF /* LambertianMaterial.swift in Sources */,
 				0BF7CA901F3EA58D00D28067 /* Ray.swift in Sources */,
+				0B0D2DBD1F4D16D800C4EC57 /* DielectricMaterial.swift in Sources */,
 				0BA22CCB1F421081007149CF /* Camera.swift in Sources */,
 				0BF7CAA21F3FC4BB00D28067 /* Plane.swift in Sources */,
 				0BA22CD81F426820007149CF /* PointLight.swift in Sources */,
