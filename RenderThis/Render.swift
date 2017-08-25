@@ -47,7 +47,7 @@ func scene2() -> Scene {
     scene.add(light: PointLight(position: Point(-30, 20, -80), color: Color(1,1,1)))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
-    let camera: PinholeCamera = PinholeCamera(position: Point(0,0,-10), lookAt: Point(1,2.4,1), up: Vector(0,1,0), horizontal_field_of_view: 20, focal_length: 0.5, film: film, samples_per_pixel: 4)
+    let camera: PinholeCamera = PinholeCamera(origin: Point(0,0,-10), look_at: Point(0,0,0), up: Vector(0,1,0), vertical_field_of_view: 20, film: film, samples_per_pixel: 1)
     
     scene.add(camera: camera)
     
@@ -65,11 +65,8 @@ func scene3() -> Scene {
     scene.add(object: Sphere(center: Point(2, 1.5, -0.5), radius: 1.5, material: LambertianMaterial(color: Color(1, 0.2, 0.2))))
     scene.add(object: Plane(origin: Point(0, 0, 0), normal: Normal(0, 1, 0), material: LambertianMaterial(color: Color(1, 1, 0.7))))
     
-    scene.add(light: PointLight(position: Point(20, 80, -30), color: Color(1, 1, 1)))
-    scene.add(light: PointLight(position: Point(50, 40, -20), color: Color(1, 1, 1)))
-    
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
-    let camera: PinholeCamera = PinholeCamera(position: Point(0, 2.5, -10), lookAt: Point(0, 2, 0), up: Vector(0, 1, 0), horizontal_field_of_view: 20, focal_length: 0.5, film: film, samples_per_pixel: 4)
+    let camera: PinholeCamera = PinholeCamera(origin: Point(0, 2.5, -20), look_at: Point(0, 2, 0), up: Vector(0, 1, 0), vertical_field_of_view: 25, film: film, samples_per_pixel: 1)
 
     scene.add(camera: camera)
     
@@ -98,11 +95,8 @@ func scene4() -> Scene {
     scene.add(object: Ring(center: Point(-2, 5, 2), normal: Normal(1, 1, -1), min_radius: 2.2, max_radius: 2.8, material: ring_material))
     scene.add(object: Plane(origin: Point(0, 0, 0), normal: Normal(0, 1, 0), material: LambertianMaterial(color: Color(1, 0.3, 0.7))))
     
-    scene.add(light: PointLight(position: Point(-40, 100, -40), color: Color(1, 1, 1)))
-    scene.add(light: PointLight(position: Point(20, 100, -40), color: Color(1, 1, 1)))
-    
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
-    let camera: PinholeCamera = PinholeCamera(position: Point(-2.5, 10, -20), lookAt: Point(0, 3, 0), up: Vector(0, 1, 0), horizontal_field_of_view: 90, focal_length: 0.1, film: film, samples_per_pixel: 4)
+    let camera: PinholeCamera = PinholeCamera(origin: Point(-2.5, 10, -20), look_at: Point(0, 3, 0), up: Vector(0, 1, 0), vertical_field_of_view: 25, film: film, samples_per_pixel: 1)
     
     scene.add(camera: camera)
     
@@ -119,7 +113,7 @@ func scene5() -> Scene {
     scene.add(object: Sphere(center: Point(0, -100.5, 1), radius: 100, material: LambertianMaterial(color: Color(1, 0.5, 0.5))))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
-    let camera: PinholeCamera = PinholeCamera(position: Point(0, 1, -4), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), horizontal_field_of_view: 90, focal_length: 0.1, film: film, samples_per_pixel: 32)
+    let camera: PinholeCamera = PinholeCamera(origin: Point(0, 1, -4), look_at: Point(0, 0, 0), up: Vector(0, 1, 0), vertical_field_of_view: 22, film: film, samples_per_pixel: 1)
     
     scene.add(camera: camera)
     
@@ -135,10 +129,9 @@ func scene6() -> Scene {
     scene.add(object: Sphere(center: Point(0, 0, 1), radius: 0.5, material: LambertianMaterial(color: Color(0.8, 0.3, 0.3))))
     scene.add(object: Sphere(center: Point(1, 0, 1), radius: 0.5, material: MetalMaterial(color: Color(0.8, 0.6, 0.2), fuzz: 0)))
     scene.add(object: Sphere(center: Point(0, -100.5, 1), radius: 100, material: LambertianMaterial(color: Color(0.8, 0.8, 0))))
-    //scene.add(object: Sphere(center: Point(0, 0, 0), radius: -1000, material: LambertianMaterial(color: Color(1, 1, 1))))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
-    let camera: PinholeCamera = PinholeCamera(position: Point(0, 1, -4), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), horizontal_field_of_view: 90, focal_length: 0.1, film: film, samples_per_pixel: 10)
+    let camera: PinholeCamera = PinholeCamera(origin: Point(0, 1, -4), look_at: Point(0, 0, 0), up: Vector(0, 1, 0), vertical_field_of_view: 25, film: film, samples_per_pixel: 1)
     
     scene.add(camera: camera)
     
@@ -151,14 +144,12 @@ func scene7() -> Scene {
     let scene: Scene = Scene()
     
     scene.add(object: Sphere(center: Point(-1, 0, 1), radius: 0.5, material: DielectricMaterial(refractive_index: 1.5)))
-    //scene.add(object: Sphere(center: Point(0, 0, 1), radius: 0.2, material: LambertianMaterial(color: Color(0.8, 0.3, 0.3))))
     scene.add(object: Box(min: Point(-1, -0.1, 0.9), max: Point(0, 0.1, 1.1), material: LambertianMaterial(color: Color(1, 0.4, 1))))
     scene.add(object: Sphere(center: Point(1, 0, 1), radius: 0.5, material: MetalMaterial(color: Color(0.8, 0.6, 0.2), fuzz: 0)))
     scene.add(object: Sphere(center: Point(0, -100.5, 1), radius: 100, material: LambertianMaterial(color: Color(0.8, 0.8, 0))))
-    //scene.add(object: Sphere(center: Point(0, 0, 0), radius: -1000, material: LambertianMaterial(color: Color(1, 1, 1))))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
-    let camera: PinholeCamera = PinholeCamera(position: Point(0, 1, -4), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), horizontal_field_of_view: 90, focal_length: 0.1, film: film, samples_per_pixel: 10)
+    let camera: PinholeCamera = PinholeCamera(origin: Point(0, 1, -5), look_at: Point(0, 0, 0), up: Vector(0, 1, 0), vertical_field_of_view: 25, film: film, samples_per_pixel: 1)
     
     scene.add(camera: camera)
     
@@ -203,10 +194,30 @@ func scene8() -> Scene {
     scene.add(object: Box(min: Point(-8.5, 2, -8.5), max: Point(-4.5, 8, -4.5), material: lamb4))
         
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
-    let camera: PinholeCamera = PinholeCamera(position: Point(8.3, 7, -18), lookAt: Point(-4.7, 3, 2.5), up: Vector(0, 1, 0), horizontal_field_of_view: 45, focal_length: 0.15, film: film, samples_per_pixel: 100)
+    let camera: PinholeCamera = PinholeCamera(origin: Point(8.3, 7, -18), look_at: Point(-4.7, 3, 2.5), up: Vector(0, 1, 0), vertical_field_of_view: 15, film: film, samples_per_pixel: 1)
     
     scene.add(camera: camera)
     
     return scene
 }
+
+func scene9() -> Scene {
+    let horizontal_resolution: Int = 640
+    let vertical_resolution: Int = 480
+    let scene: Scene = Scene()
+    
+    //scene.add(object: Sphere(center: Point(30, 4, -3.5), radius: 2.4, material: LambertianMaterial(color: Color(0.1, 0.3, 0.9))))
+    //scene.add(object: Sphere(center: Point(-0.5, 2, -1.5), radius: 1.8, material: LambertianMaterial(color: Color(1, 0.2, 0.2))))
+    scene.add(object: Sphere(center: Point(0, 0, 0), radius: 1, material: LambertianMaterial(color: Color(1, 0.9, 0.1))))
+    //scene.add(object: Sphere(center: Point(0, -100.5, 0), radius: 100, material: LambertianMaterial(color: Color(0.4, 0.4, 0.7))))
+    //scene.add(object: Sphere(center: Point(0, 0, 0), radius: -1000, material: LambertianMaterial(color: Color(1, 1, 1))))
+    
+    let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
+    let camera: ThinLensCamera = ThinLensCamera(position: Point(0, 5.2, 10), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), horizontal_field_of_view: 90, aperture: 4, focal_length: 1, film: film, samples_per_pixel: 10)
+    
+    scene.add(camera: camera)
+    
+    return scene
+}
+
 
