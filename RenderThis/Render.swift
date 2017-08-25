@@ -11,7 +11,7 @@ import Cocoa
 import GLKit
 
 func render() -> Film {
-    let scene: Scene = scene8()
+    let scene: Scene = scene9()
     capture(scene: scene, withCamera: scene.camera)
     return scene.camera.film
 }
@@ -206,14 +206,13 @@ func scene9() -> Scene {
     let vertical_resolution: Int = 480
     let scene: Scene = Scene()
     
-    //scene.add(object: Sphere(center: Point(30, 4, -3.5), radius: 2.4, material: LambertianMaterial(color: Color(0.1, 0.3, 0.9))))
-    //scene.add(object: Sphere(center: Point(-0.5, 2, -1.5), radius: 1.8, material: LambertianMaterial(color: Color(1, 0.2, 0.2))))
-    scene.add(object: Sphere(center: Point(0, 0, 0), radius: 1, material: LambertianMaterial(color: Color(1, 0.9, 0.1))))
-    //scene.add(object: Sphere(center: Point(0, -100.5, 0), radius: 100, material: LambertianMaterial(color: Color(0.4, 0.4, 0.7))))
-    //scene.add(object: Sphere(center: Point(0, 0, 0), radius: -1000, material: LambertianMaterial(color: Color(1, 1, 1))))
+    scene.add(object: Sphere(center: Point(0, 4, 4), radius: 2.5, material: LambertianMaterial(color: Color(0.1, 0.3, 0.9))))
+    scene.add(object: Sphere(center: Point(2.5, 2, -2), radius: 2, material: LambertianMaterial(color: Color(1, 0.2, 0.2))))
+    scene.add(object: Sphere(center: Point(-2, 1, -5), radius: 1, material: LambertianMaterial(color: Color(1, 0.9, 0.1))))
+    scene.add(object: Plane(origin: Point(0, 0, 0), normal: Normal(0, 1, 0), material: LambertianMaterial(color: Color(0.25, 0.95, 0.25))))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
-    let camera: ThinLensCamera = ThinLensCamera(position: Point(0, 5.2, 10), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), horizontal_field_of_view: 90, aperture: 4, focal_length: 1, film: film, samples_per_pixel: 10)
+    let camera: ThinLensCamera = ThinLensCamera(origin: Point(0, 5, -20), look_at: Point(0, 3, 0), up: Vector(0, 1, 0), vertical_field_of_view: 25, aperture: 2, focal_length: 24, film: film, samples_per_pixel: 10)
     
     scene.add(camera: camera)
     
