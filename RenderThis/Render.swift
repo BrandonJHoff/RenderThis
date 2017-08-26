@@ -11,7 +11,7 @@ import Cocoa
 import GLKit
 
 func render() -> Film {
-    let scene: Scene = scene9()
+    let scene: Scene = scene2()
     capture(scene: scene, withCamera: scene.camera)
     return scene.camera.film
 }
@@ -28,7 +28,7 @@ func scene1() -> Scene {
     scene.add(light: PointLight(position: Point(-30, 20, -80), color: Color(1,1,1)))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
-    let camera: OrthoCamera = OrthoCamera(position: Point(0, 0, -2), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), xSize: 5.0, ySize: 5.0, film: film, samples_per_pixel: 4)
+    let camera: OrthoCamera = OrthoCamera(origin: Point(0, 0, -2), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), xSize: 5.0, ySize: 5.0, film: film, samples_per_pixel: 4)
     
     scene.add(camera: camera)
     
@@ -213,6 +213,44 @@ func scene9() -> Scene {
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
     let camera: ThinLensCamera = ThinLensCamera(origin: Point(0, 5, -20), look_at: Point(0, 3, 0), up: Vector(0, 1, 0), vertical_field_of_view: 25, aperture: 2, focal_length: 24, film: film, samples_per_pixel: 10)
+    
+    scene.add(camera: camera)
+    
+    return scene
+}
+
+func scene10() -> Scene {
+    let horizontal_resolution: Int = 640
+    let vertical_resolution: Int = 480
+    let scene: Scene = Scene()
+    
+    scene.add(object: Plane(origin: Point(0, 0, 0), normal: Normal(0, 1, 0), material: LambertianMaterial(color: Color(0.5, 0.5, 0.5))))
+    
+    for i in -11..<11 {
+        for j in -11..<11 {
+            let choose_mat: Double = drand48()
+            let center:Point = Point(Float(i) + 0.9 * Float(drand48()), 0.2, Float(j) + 0.9 * Float(drand48()))
+            
+            if length(center - Point(4, 0.2, 0)) > 0.9 {
+                if choose_mat < 0.8 { // diffuse
+                    scene.add(object: Sphere(center: center, radius: 0.2, material: LambertianMaterial(color: Color(Float(drand48()*drand48()), Float(drand48()*drand48()), Float(drand48()*drand48())))))
+                } else if choose_mat < 0.95 { // metal
+                    scene.add(object: Sphere(center: center, radius: 0.2, material: MetalMaterial(color: Color(Float(0.5 * (1.0 + drand48())), Float(0.5 * (1.0 + drand48())), Float(0.5 * (1.0 + drand48()))), fuzz: Float(0.5 * drand48()))))
+                } else { // glass
+                    scene.add(object: Sphere(center: center, radius: 0.2, material: DielectricMaterial(refractive_index: 1.5)))
+                }
+            }
+        }
+    }
+    
+    scene.add(object: Sphere(center: Point(0, 1, 0), radius: 1, material: DielectricMaterial(refractive_index: 1.5)))
+    scene.add(object: Sphere(center: Point(-4, 1, 0), radius: 1, material: LambertianMaterial(color: Color(0.4, 0.2, 0.1))))
+    scene.add(object: Sphere(center: Point(4, 1, 0), radius: 1, material: MetalMaterial(color: Color(0.7, 0.6, 0.5), fuzz: 0)))
+    
+    let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
+    let co = Point(15, 1, -3.5)
+    let at = Point(3, 0.6, 0)
+    let camera: ThinLensCamera = ThinLensCamera(origin: co, look_at: at, up: Vector(0, 1, 0), vertical_field_of_view: 17, aperture: 0.1, focal_length: length(co - at), film: film, samples_per_pixel: 10)
     
     scene.add(camera: camera)
     

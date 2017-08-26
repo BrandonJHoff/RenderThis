@@ -12,6 +12,7 @@ import GLKit
 protocol Camera {
     var film: Film { get set }
     var samples_per_pixel: Int { get set }
+    var origin: Point { get set }
     func makeRay(i: Int, j: Int) -> Ray
 }
 

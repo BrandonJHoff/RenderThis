@@ -10,7 +10,7 @@ import Foundation
 import GLKit
 
 class ThinLensCamera: Camera {
-    let origin: Point
+    var origin: Point
     var u: Vector
     var v: Vector
     let w: Vector

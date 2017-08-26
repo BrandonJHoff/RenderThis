@@ -10,7 +10,7 @@ import Foundation
 import GLKit
 
 class OrthoCamera: Camera {
-    let position: Point
+    var origin: Point
     let u: Vector
     let v: Vector
     let w: Vector
@@ -19,11 +19,11 @@ class OrthoCamera: Camera {
     var film: Film
     var samples_per_pixel: Int
     
-    init(position: Point, lookAt: Point, up: Vector, xSize: Float, ySize: Float, film: Film, samples_per_pixel: Int) {
-        self.position = position
+    init(origin: Point, lookAt: Point, up: Vector, xSize: Float, ySize: Float, film: Film, samples_per_pixel: Int) {
+        self.origin = origin
         self.film = film
         self.samples_per_pixel = samples_per_pixel
-        w = normalize(lookAt - position)
+        w = normalize(lookAt - origin)
         u = normalize(cross(up, w)) * xSize
         v = normalize(cross(w, u)) * ySize
         x_scale = 2.0 / Float(film.horizontal_resolution)
@@ -33,7 +33,7 @@ class OrthoCamera: Camera {
     func makeRay(i: Int, j: Int) -> Ray {
         let x: Float = (Float(i) + 0.5) * x_scale - 1
         let y: Float = (Float(j) + 0.5) * y_scale - 1
-        let p: Point = position + x * u + y * v
+        let p: Point = origin + x * u + y * v
         return Ray(origin: p, direction: w)
     }
 }

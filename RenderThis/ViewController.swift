@@ -23,8 +23,12 @@ class ViewController: NSViewController {
     }
 
     @IBAction func renderPressed(_ sender: NSButton) {
+        let startTime = CFAbsoluteTimeGetCurrent()
         let film = render()
         imageView.image = film.develop()
+        
+        let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+        print("Time elapsed): \(timeElapsed) s.")
     }
 }
 
