@@ -14,12 +14,14 @@ class Sphere: Object {
     let radius: Float
     let radius_squared: Float
     var material: Material
+    var bbox: BBox
     
     init(center: Point, radius: Float, material: Material) {
         self.center = center
         self.radius = radius
         self.radius_squared = radius * radius
         self.material = material
+        self.bbox = BBox(min: center - Vector(radius), max: center + Vector(radius))
     }
     
     // formula from:

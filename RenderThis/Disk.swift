@@ -15,6 +15,7 @@ class Disk: Object {
     let radius: Float
     let radius_squared: Float
     var material: Material
+    var bbox: BBox
     
     init(center: Point, normal: Normal, radius: Float, material: Material) {
         self.center = center
@@ -22,6 +23,7 @@ class Disk: Object {
         self.radius = radius
         self.radius_squared = radius * radius
         self.material = material
+        self.bbox = BBox(min: center - Vector(radius), max: center + Vector(radius))
     }
     
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {

@@ -1,24 +1,23 @@
 //
-//  Box.swift
+//  BBox.swift
 //  RenderThis
 //
-//  Created by Brandon Hoff on 8/18/17.
+//  Created by Brandon Hoff on 8/27/17.
 //  Copyright © 2017 Brandon Hoff. All rights reserved.
 //
 
 import Foundation
+import GLKit
 
-class Box: Object {
+class BBox {
     let min: Point
     let max: Point
-    var material: Material
-    var bbox: BBox
+    let center: Point
     
-    init(min: Point, max: Point, material: Material) {
+    init(min: Point, max: Point) {
         self.min = min
         self.max = max
-        self.material = material
-        self.bbox = BBox(min: min, max: max)
+        self.center = (min + max) * 0.5
     }
     
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {
@@ -52,27 +51,11 @@ class Box: Object {
             return false
         }
         
-        let has_hit_t1 = hit_record.update(t: tmin, object: self)
-        let has_hit_t2 = hit_record.update(t: tmax, object: self)
+//        let has_hit_t1 = hit_record.update(t: tmin, object: self)
+//        let has_hit_t2 = hit_record.update(t: tmax, object: self)
         
-        return has_hit_t1 || has_hit_t2
+//        return has_hit_t1 || has_hit_t2
+        return true
     }
-    
-    func normal(atPoint point: Point) -> Normal {
-        let epsilon: Float = 0.001;
-        
-        if abs(min.x - point.x) < epsilon {
-            return Normal(-1, 0, 0)
-        } else if abs(max.x - point.x) < epsilon {
-            return Normal(1, 0, 0)
-        } else if abs(min.y - point.y) < epsilon {
-            return Normal(0, -1, 0)
-        } else if abs(max.y - point.y) < epsilon {
-            return Normal(0, 1, 0)
-        } else if abs(min.z - point.z) < epsilon {
-            return Normal(0, 0, -1)
-        } else {
-            return Normal(0, 0, 1)
-        }
-    }
+
 }

@@ -15,6 +15,7 @@ class Triangle: Object {
     let p2: Point
     let normal: Normal
     var material: Material
+    var bbox: BBox
     
     init(p0: Point, p1: Point, p2: Point, material: Material) {
         self.p0 = p0
@@ -22,6 +23,7 @@ class Triangle: Object {
         self.p2 = p2
         self.normal = normalize(cross(p1 - p0, p2 - p0))
         self.material = material
+        self.bbox = BBox(min: min(min(p0, p1), p2), max: max(max(p0, p1), p2))
     }
     
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {

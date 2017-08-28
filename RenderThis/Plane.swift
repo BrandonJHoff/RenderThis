@@ -13,11 +13,13 @@ class Plane: Object {
     let origin: Point
     let normal: Normal
     var material: Material
+    var bbox: BBox
     
     init(origin: Point, normal: Normal, material: Material) {
         self.origin = origin
         self.normal = normalize(normal)
         self.material = material
+        self.bbox = BBox(min: Point(0), max: Point(0))
     }
     
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {

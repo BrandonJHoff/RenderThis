@@ -11,7 +11,7 @@ import Cocoa
 import GLKit
 
 func render() -> Film {
-    let scene: Scene = scene2()
+    let scene: Scene = scene4()
     capture(scene: scene, withCamera: scene.camera)
     return scene.camera.film
 }

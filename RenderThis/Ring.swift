@@ -17,6 +17,7 @@ class Ring: Object {
     let min_radius_squared: Float
     let max_radius_squared: Float
     var material: Material
+    var bbox: BBox
     
     init(center: Point, normal: Normal, min_radius: Float, max_radius: Float, material: Material) {
         self.center = center
@@ -26,6 +27,7 @@ class Ring: Object {
         self.min_radius_squared = min_radius * min_radius
         self.max_radius_squared = max_radius * max_radius
         self.material = material
+        self.bbox = BBox(min: center - Vector(max_radius), max: center + Vector(max_radius))
     }
     
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {

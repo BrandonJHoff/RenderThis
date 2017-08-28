@@ -10,6 +10,7 @@ import Foundation
 
 protocol Object {
     var material: Material { get set }
+    var bbox: BBox { get set }
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool
     func normal(atPoint point: Point) -> Normal
 }
