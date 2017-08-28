@@ -57,5 +57,8 @@ class BBox {
 //        return has_hit_t1 || has_hit_t2
         return true
     }
+}
 
+func surroundBBox(b1: BBox, b2: BBox) -> BBox {
+    return BBox(min: min(b1.min, b2.min), max: max(b1.max, b2.max))
 }
