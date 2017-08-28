@@ -22,6 +22,7 @@ class Box: Object {
     }
     
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {
+        Stats.total_hit_tests += 1
         var t1: Float = (min.x - ray.origin.x) * ray.inv_direction.x
         var t2: Float = (max.x - ray.origin.x) * ray.inv_direction.x
         
@@ -54,6 +55,8 @@ class Box: Object {
         
         let has_hit_t1 = hit_record.update(t: tmin, object: self)
         let has_hit_t2 = hit_record.update(t: tmax, object: self)
+        
+        Stats.total_hits += 1
         
         return has_hit_t1 || has_hit_t2
     }

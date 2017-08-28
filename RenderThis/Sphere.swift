@@ -27,6 +27,7 @@ class Sphere: Object {
     // formula from:
     // https://en.wikipedia.org/wiki/Line–sphere_intersection
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {
+        Stats.total_hit_tests += 1
         let v = ray.origin - center
         let b = dot(ray.direction, v)
         let c = dot(v, v) - radius_squared
@@ -37,6 +38,7 @@ class Sphere: Object {
             let has_hit_t1 = hit_record.update(t: -b - d, object: self)
             let has_hit_t2 = hit_record.update(t: -b + d, object: self)
             
+            Stats.total_hits += 1
             return has_hit_t1 || has_hit_t2
         }
         return false

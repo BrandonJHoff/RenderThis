@@ -27,6 +27,7 @@ class Triangle: Object {
     }
     
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {
+        Stats.total_hit_tests += 1
         let e1: Vector = p1 - p0
         let e2: Vector = p2 - p0
         let r1: Vector = cross(ray.direction, e2)
@@ -52,6 +53,7 @@ class Triangle: Object {
         }
         
         let t: Float = dot(e2, r3) * inv_denom
+        Stats.total_hits += 1
         return hit_record.update(t: t, object: self)
     }
     

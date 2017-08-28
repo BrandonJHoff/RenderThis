@@ -11,7 +11,7 @@ import Cocoa
 import GLKit
 
 func render() -> Film {
-    let scene: Scene = scene4()
+    let scene: Scene = scene10()
     capture(scene: scene, withCamera: scene.camera)
     return scene.camera.film
 }
@@ -28,7 +28,7 @@ func scene1() -> Scene {
     scene.add(light: PointLight(position: Point(-30, 20, -80), color: Color(1,1,1)))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
-    let camera: OrthoCamera = OrthoCamera(origin: Point(0, 0, -2), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), xSize: 5.0, ySize: 5.0, film: film, samples_per_pixel: 4)
+    let camera: OrthoCamera = OrthoCamera(origin: Point(0, 0, -2), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), xSize: 5.0, ySize: 5.0, film: film, samples_per_pixel: 1)
     
     scene.add(camera: camera)
     
@@ -212,7 +212,7 @@ func scene9() -> Scene {
     scene.add(object: Plane(origin: Point(0, 0, 0), normal: Normal(0, 1, 0), material: LambertianMaterial(color: Color(0.25, 0.95, 0.25))))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
-    let camera: ThinLensCamera = ThinLensCamera(origin: Point(0, 5, -20), look_at: Point(0, 3, 0), up: Vector(0, 1, 0), vertical_field_of_view: 25, aperture: 2, focal_length: 24, film: film, samples_per_pixel: 10)
+    let camera: ThinLensCamera = ThinLensCamera(origin: Point(0, 5, -20), look_at: Point(0, 3, 0), up: Vector(0, 1, 0), vertical_field_of_view: 25, aperture: 2, focal_length: 24, film: film, samples_per_pixel: 1)
     
     scene.add(camera: camera)
     
@@ -250,7 +250,7 @@ func scene10() -> Scene {
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
     let co = Point(15, 1, -3.5)
     let at = Point(3, 0.6, 0)
-    let camera: ThinLensCamera = ThinLensCamera(origin: co, look_at: at, up: Vector(0, 1, 0), vertical_field_of_view: 17, aperture: 0.1, focal_length: length(co - at), film: film, samples_per_pixel: 10)
+    let camera: ThinLensCamera = ThinLensCamera(origin: co, look_at: at, up: Vector(0, 1, 0), vertical_field_of_view: 17, aperture: 0.1, focal_length: length(co - at), film: film, samples_per_pixel: 1)
     
     scene.add(camera: camera)
     

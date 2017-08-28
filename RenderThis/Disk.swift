@@ -27,11 +27,13 @@ class Disk: Object {
     }
     
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {
+        Stats.total_hit_tests += 1
         let denom: Float = dot(normal, ray.direction)
         if abs(denom) > 0.0001 {
             let t: Float = dot(normal, center - ray.origin) / denom
             let d: Vector = ray.getPoint(at: t) - center
             if dot(d, d) < radius_squared {
+                Stats.total_hits += 1
                 return hit_record.update(t: t, object: self)
             }
         }

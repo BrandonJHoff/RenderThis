@@ -19,6 +19,7 @@ class Scene {
     }
     
     func add(object: Object) {
+        Stats.total_objects += 1
         objects.append(object)
     }
     
@@ -27,6 +28,7 @@ class Scene {
     }
     
     func add(camera: Camera) {
+        Stats.total_primary_rays = camera.film.horizontal_resolution * camera.film.vertical_resolution * camera.samples_per_pixel
         self.camera = camera
     }
 }
