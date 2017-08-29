@@ -12,6 +12,7 @@ import GLKit
 
 func render() -> Film {
     let scene: Scene = scene10()
+    scene.buildStructure()
     capture(scene: scene, withCamera: scene.camera)
     return scene.camera.film
 }
@@ -24,8 +25,7 @@ func scene1() -> Scene {
     scene.add(object: Sphere(center: Point(-1.5, 0.5, 10), radius: 1.2, material: LambertianMaterial(color: Color(1,0,0))))
     scene.add(object: Sphere(center: Point(0, 0, 10.1), radius: 1.7, material: LambertianMaterial(color: Color(0,1,0))))
     scene.add(object: Sphere(center: Point(1, -0.5, 10.2), radius: 1.9, material: LambertianMaterial(color: Color(0,0,1))))
-    scene.add(object: Plane(origin: Point(0, -2, 0), normal: Normal(0, 1, 0), material: LambertianMaterial(color: Color(1,1,0))))
-    scene.add(light: PointLight(position: Point(-30, 20, -80), color: Color(1,1,1)))
+    scene.add(object: Sphere(center: Point(0, -102, 0), radius: 100, material: LambertianMaterial(color: Color(1, 1, 0))))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
     let camera: OrthoCamera = OrthoCamera(origin: Point(0, 0, -2), lookAt: Point(0, 0, 0), up: Vector(0, 1, 0), xSize: 5.0, ySize: 5.0, film: film, samples_per_pixel: 1)
@@ -43,8 +43,7 @@ func scene2() -> Scene {
     scene.add(object: Sphere(center: Point(-1.5, 0.5, 10), radius: 1.2, material: LambertianMaterial(color: Color(1,0,0))))
     scene.add(object: Sphere(center: Point(0, 0, 10.1), radius: 1.7, material: LambertianMaterial(color: Color(0,1,0))))
     scene.add(object: Sphere(center: Point(1, -0.5, 10.2), radius: 1.9, material: LambertianMaterial(color: Color(0,0,1))))
-    scene.add(object: Plane(origin: Point(0, -2, 0), normal: Normal(0, 1, 0), material: LambertianMaterial(color: Color(1,1,0))))
-    scene.add(light: PointLight(position: Point(-30, 20, -80), color: Color(1,1,1)))
+    scene.add(object: Sphere(center: Point(0, -102, 0), radius: 100, material: LambertianMaterial(color: Color(1, 1, 0))))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
     let camera: PinholeCamera = PinholeCamera(origin: Point(0,0,-10), look_at: Point(0,0,0), up: Vector(0,1,0), vertical_field_of_view: 20, film: film, samples_per_pixel: 1)
@@ -63,7 +62,7 @@ func scene3() -> Scene {
     scene.add(object: Sphere(center: Point(-4, 3.5, 1.5), radius: 2, material: LambertianMaterial(color: Color(0.1, 0.3, 0.9))))
     scene.add(object: Sphere(center: Point(0, 1, 0.5), radius: 1, material: LambertianMaterial(color: Color(1, 0.9, 0.1))))
     scene.add(object: Sphere(center: Point(2, 1.5, -0.5), radius: 1.5, material: LambertianMaterial(color: Color(1, 0.2, 0.2))))
-    scene.add(object: Plane(origin: Point(0, 0, 0), normal: Normal(0, 1, 0), material: LambertianMaterial(color: Color(1, 1, 0.7))))
+    scene.add(object: Sphere(center: Point(0, -100, 0), radius: 100, material: LambertianMaterial(color: Color(1, 1, 0.7))))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
     let camera: PinholeCamera = PinholeCamera(origin: Point(0, 2.5, -20), look_at: Point(0, 2, 0), up: Vector(0, 1, 0), vertical_field_of_view: 25, film: film, samples_per_pixel: 1)
@@ -93,7 +92,7 @@ func scene4() -> Scene {
     scene.add(object: Sphere(center: Point(-2, 5, 2), radius: 0.8, material: LambertianMaterial(color: Color(1, 0, 0))))
     scene.add(object: Ring(center: Point(-2, 5, 2), normal: Normal(1, 1, -1), min_radius: 1.2, max_radius: 1.8, material: ring_material))
     scene.add(object: Ring(center: Point(-2, 5, 2), normal: Normal(1, 1, -1), min_radius: 2.2, max_radius: 2.8, material: ring_material))
-    scene.add(object: Plane(origin: Point(0, 0, 0), normal: Normal(0, 1, 0), material: LambertianMaterial(color: Color(1, 0.3, 0.7))))
+    scene.add(object: Sphere(center: Point(0, -100, 0), radius: 100, material: LambertianMaterial(color: Color(1, 0.3, 0.7))))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
     let camera: PinholeCamera = PinholeCamera(origin: Point(-2.5, 10, -20), look_at: Point(0, 3, 0), up: Vector(0, 1, 0), vertical_field_of_view: 25, film: film, samples_per_pixel: 1)
@@ -167,7 +166,7 @@ func scene8() -> Scene {
     let lamb3: Material = LambertianMaterial(color: Color(0.3, 0.3, 0.9))
     let lamb4: Material = LambertianMaterial(color: Color(0.9, 0.3, 0.3))
     
-    scene.add(object: Plane(origin: Point(0, 2.5, 0), normal: Normal(0, 1, 0), material: lamb1))
+    scene.add(object: Sphere(center: Point(0, -97.5, 0), radius: 100, material: lamb1))
     
     for i in 0..<4 {
         let eta = 1.0 + Float(i) * 0.5 + 0.05
@@ -209,7 +208,7 @@ func scene9() -> Scene {
     scene.add(object: Sphere(center: Point(0, 4, 4), radius: 2.5, material: LambertianMaterial(color: Color(0.1, 0.3, 0.9))))
     scene.add(object: Sphere(center: Point(2.5, 2, -2), radius: 2, material: LambertianMaterial(color: Color(1, 0.2, 0.2))))
     scene.add(object: Sphere(center: Point(-2, 1, -5), radius: 1, material: LambertianMaterial(color: Color(1, 0.9, 0.1))))
-    scene.add(object: Plane(origin: Point(0, 0, 0), normal: Normal(0, 1, 0), material: LambertianMaterial(color: Color(0.25, 0.95, 0.25))))
+    scene.add(object: Sphere(center: Point(0, -100, 1), radius: 100, material: LambertianMaterial(color: Color(0.25, 0.95, 0.25))))
     
     let film: Film = Film(horizontal_resolution: horizontal_resolution, vertical_resolution: vertical_resolution)
     let camera: ThinLensCamera = ThinLensCamera(origin: Point(0, 5, -20), look_at: Point(0, 3, 0), up: Vector(0, 1, 0), vertical_field_of_view: 25, aperture: 2, focal_length: 24, film: film, samples_per_pixel: 1)
@@ -224,7 +223,7 @@ func scene10() -> Scene {
     let vertical_resolution: Int = 480
     let scene: Scene = Scene()
     
-    scene.add(object: Plane(origin: Point(0, 0, 0), normal: Normal(0, 1, 0), material: LambertianMaterial(color: Color(0.5, 0.5, 0.5))))
+    scene.add(object: Sphere(center: Point(0, -100, 0), radius: 100, material: LambertianMaterial(color: Color(0.5, 0.5, 0.5))))
     
     for i in -11..<11 {
         for j in -11..<11 {

@@ -22,13 +22,16 @@ func capture(scene: Scene, withCamera camera: Camera) {
             
             var final_color: Color = Color(0, 0, 0)
             
+            //print("i: \(i)  j: \(j)")
+            
             for _ in 0..<camera.samples_per_pixel {
                 let ray: Ray = camera.makeRay(i: i, j: j)
                 scene.hit_record.reset()
                 
-                for object in scene.objects {
-                    _ = object.hit(withRay: ray, recordWith: scene.hit_record)
-                }
+//                for object in scene.objects {
+//                    _ = object.hit(withRay: ray, recordWith: scene.hit_record)
+//                }
+                _ = scene.octree.intersect(withRay: ray, recordWith: scene.hit_record)
                 
                 if let object = scene.hit_record.object {
                     final_color +=  object.material.shade(object: object, atPoint: ray.getPoint(at: scene.hit_record.t), inScene: scene, withIncomingRay: ray, atMaxDepth: 0)

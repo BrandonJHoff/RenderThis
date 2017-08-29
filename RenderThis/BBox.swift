@@ -21,6 +21,7 @@ class BBox {
     }
     
     func hit(withRay ray: Ray, recordWith hit_record: HitRecord) -> Bool {
+        Stats.total_bbox_tests += 1
         var t1: Float = (min.x - ray.origin.x) * ray.inv_direction.x
         var t2: Float = (max.x - ray.origin.x) * ray.inv_direction.x
         

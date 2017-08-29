@@ -46,9 +46,10 @@ class DielectricMaterial: Material {
         }
         
         if depth < 50 {
-            for object in scene.objects {
-                _ = object.hit(withRay: secondary_ray, recordWith: temp_hit_record)
-            }
+//            for object in scene.objects {
+//                _ = object.hit(withRay: secondary_ray, recordWith: temp_hit_record)
+//            }
+            _ = scene.octree.intersect(withRay: secondary_ray, recordWith: temp_hit_record)
             
             if let object = temp_hit_record.object {
                 final_color +=  object.material.shade(object: object, atPoint: secondary_ray.getPoint(at: temp_hit_record.t), inScene: scene, withIncomingRay: secondary_ray, atMaxDepth: depth + 1)

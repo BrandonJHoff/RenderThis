@@ -33,6 +33,7 @@ class ViewController: NSViewController {
         print("Total number of primary rays: \(Stats.total_primary_rays)")
         print("Total hit tests: \(Stats.total_hit_tests)")
         print("Total hits: \(Stats.total_hits)")
+        print("Total bbox tests: \(Stats.total_bbox_tests)")
         print("Hit ratio: \(Float(Stats.total_hits) / Float(Stats.total_hit_tests))")
         print("Avg hit tests per ray: \(Stats.total_hit_tests / Stats.total_primary_rays)")
     }
